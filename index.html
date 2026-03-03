@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Helios by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Canadian Neuromorphic Engineering Workshop</title>
@@ -15,330 +10,640 @@
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
 
+			<!-- Top Navigation Bar -->
+			<div id="topnav" style="position:sticky;top:0;z-index:9999;background:rgba(15,17,26,0.98);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(0,0,0,0.4);width:100%;">
+				<style>
+					.topnav-inner {
+						max-width: 1300px;
+						margin: 0 auto;
+						display: flex;
+						justify-content: center;
+						align-items: stretch;
+						overflow-x: auto;
+						scrollbar-width: none;
+						white-space: nowrap;
+					}
+					.topnav-inner::-webkit-scrollbar { display: none; }
+					.topnav-inner a.nav-link {
+						color: #aab0c0;
+						text-decoration: none;
+						padding: 0.85em 1em;
+						font-size: 0.78em;
+						font-weight: 600;
+						letter-spacing: 0.07em;
+						text-transform: uppercase;
+						display: inline-flex;
+						align-items: center;
+						border-bottom: 3px solid transparent;
+						border-top: 3px solid transparent;
+						transition: color 0.2s, border-bottom-color 0.2s, background 0.2s;
+						flex-shrink: 0;
+					}
+					.topnav-inner a.nav-link:hover {
+						color: #fff;
+						border-bottom-color: #2196F3;
+						background: rgba(255,255,255,0.04);
+					}
+					.topnav-inner a.nav-cta {
+						color: #fff;
+						text-decoration: none;
+						padding: 0 1.2em;
+						font-size: 0.78em;
+						font-weight: 700;
+						letter-spacing: 0.07em;
+						text-transform: uppercase;
+						background: #2196F3;
+						display: inline-flex;
+						align-items: center;
+						margin: 0.5em 0.75em;
+						border-radius: 5px;
+						transition: background 0.2s;
+						flex-shrink: 0;
+					}
+					.topnav-inner a.nav-cta:hover { background: #1565C0; }
+
+					/* Leader cards */
+					.leaders-grid {
+						display: grid;
+						grid-template-columns: repeat(3, 1fr);
+						gap: 1.8em;
+						margin-top: 2.5em;
+					}
+					@media (max-width: 1024px) {
+						.leaders-grid { grid-template-columns: repeat(2, 1fr); }
+					}
+					@media (max-width: 600px) {
+						.leaders-grid { grid-template-columns: 1fr; }
+					}
+					.leader-card {
+						background: #fff;
+						border-radius: 12px;
+						box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+						overflow: hidden;
+						transition: transform 0.25s ease, box-shadow 0.25s ease;
+						display: flex;
+						flex-direction: column;
+					}
+					.leader-card:hover {
+						transform: translateY(-4px);
+						box-shadow: 0 10px 32px rgba(0,0,0,0.14);
+					}
+					.leader-photo-placeholder {
+						width: 110px;
+						height: 110px;
+						border-radius: 50%;
+						background: linear-gradient(135deg, #2196F3 0%, #4CAF50 100%);
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-size: 1.6em;
+						font-weight: 700;
+						color: white;
+						margin: 0 auto;
+						box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+						letter-spacing: 0.05em;
+					}
+					.leader-photo {
+						width: 110px;
+						height: 110px;
+						border-radius: 50%;
+						object-fit: cover;
+						border: 4px solid #fff;
+						box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+						margin: 0 auto;
+						display: block;
+					}
+					.tag {
+						display: inline-block;
+						padding: 0.2em 0.75em;
+						border-radius: 20px;
+						font-size: 0.72em;
+						font-weight: 700;
+						letter-spacing: 0.05em;
+						text-transform: uppercase;
+						margin: 0.2em;
+					}
+					.tag-lecture  { background: #e3f2fd; color: #1565C0; }
+					.tag-tutorial { background: #e8f5e9; color: #2E7D32; }
+					.tag-project  { background: #fff3e0; color: #E65100; }
+					.project-box {
+						background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+						border-left: 4px solid #2196F3;
+						border-radius: 0 8px 8px 0;
+						padding: 0.9em 1.1em;
+						margin-top: 0.75em;
+					}
+					.project-box h5 {
+						margin: 0 0 0.3em 0;
+						font-size: 0.78em;
+						text-transform: uppercase;
+						letter-spacing: 0.07em;
+						color: #2196F3;
+					}
+					.project-box p {
+						margin: 0;
+						font-size: 0.86em;
+						color: #555;
+						line-height: 1.5;
+					}
+					.leader-body { padding: 1.4em; display: flex; flex-direction: column; flex: 1; }
+					.leader-talks h4 { margin: 0.8em 0 0.25em; font-size: 0.92em; color: #222; }
+					.leader-talks p  { font-size: 0.86em; color: #555; line-height: 1.6; margin: 0 0 0.4em; }
+				</style>
+				<div class="topnav-inner">
+					<a href="#about"         class="nav-link">About</a>
+					<a href="#dates"         class="nav-link">Dates &amp; Venue</a>
+					<a href="#registration"  class="nav-link">Registration</a>
+					<a href="#application"   class="nav-link">Apply</a>
+					<a href="#accommodation" class="nav-link">Accommodation</a>
+					<a href="#leaders"       class="nav-link">Discussion Leaders &amp; Topics</a>
+					<a href="#schedule"      class="nav-link">Schedule</a>
+					<a href="#contact"       class="nav-cta">Contact</a>
+				</div>
+			</div>
+
 			<!-- Header -->
-				<div id="header">
-					<div class="inner">
-					  <header class="spaced-header">
-						<h1>Canadian Neuromorphic Engineering Workshop</h1>
-						<p style="text-align: center;">
-						  Where neuroscience meets engineering, biology inspires computation, and diverse minds <br />
-						  converge to unlock the secrets of intelligent systems.
-						</p>
-						<h2>Organisers</h2>
-						  <h8>In alphabetical order</h8>
-
-						<!-- 4 Profile Images in a Row -->
-						<div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 2em; flex-wrap: wrap;">
-							<figure style="width: 150px; text-align: center; margin: 0;">
-								<div style="width: 150px; height: 150px; margin: 0 auto;">
-									<img src="images/giulia.png" alt="Giulia D'Angelo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
-								</div>
-								<figcaption style="margin-top: 0.5em; font-weight: 600;">Giulia D'Angelo</figcaption>
-							</figure>
-
-							<figure style="width: 150px; text-align: center; margin: 0;">
-								<div style="width: 150px; height: 150px; margin: 0 auto;">
-									<img src="images/jamie.jpeg" alt="Jamie Knight" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
-								</div>
-								<figcaption style="margin-top: 0.5em; font-weight: 600;">Jamie Knight</figcaption>
-							</figure>
-
-							<figure style="width: 150px; text-align: center; margin: 0;">
-								<div style="width: 150px; height: 150px; margin: 0 auto;">
-									<img src="images/michael.jpeg" alt="Michael Furlong" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
-								</div>
-								<figcaption style="margin-top: 0.5em; font-weight: 600;">Michael Furlong</figcaption>
-							</figure>
-
-							<figure style="width: 150px; text-align: center; margin: 0;">
-								<div style="width: 150px; height: 150px; margin: 0 auto;">
-									<img src="images/terry.jpeg" alt="Terry Stewart" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
-								</div>
-								<figcaption style="margin-top: 0.5em; font-weight: 600;">Terry Stewart</figcaption>
-							</figure>
-
-
-
-
-						</div>
-
-						<hr />
-					  </header>
-					</div>
-					<!-- Inner -->
-
-					<!-- Nav -->
-<!--					<nav id="nav">-->
-<!--					  <ul>-->
-<!--						<li><a href="#about">About</a></li>-->
-<!--						<li><a href="#dates">Dates & Venue</a></li>-->
-<!--						<li><a href="#topics">Topics</a></li>-->
-<!--						<li><a href="#accommodation">Accommodation</a></li>-->
-<!--						<li><a href="#registration">Registration</a></li>-->
-<!--						<li><a href="#contact">Contact</a></li>-->
-<!--					  </ul>-->
-<!--					</nav>-->
-
-				</div>
-
-			<!-- Workshop Information -->
-				<div class="wrapper style1">
-
-				<section id="about" class="container special">
-					<header>
-					<h2>Welcome to the <strong>Canadian Neuromorphic Engineering Workshop</strong></h2>
-					<p style="font-style: italic; font-size: 1.1em;">"The brain is imagination, and that was exciting to me; I wanted to build a chip that could imagine something" - Misha Mahowald</p>
-					</header>
-
-					<div style="max-width: 900px; margin: 0 auto; text-align: left;">
-						<h3>About the Workshop</h3>
-						<p>Join us for an exciting convergence of minds! This workshop brings together researchers, engineers,
-							neuroscientists, computational scientists, roboticists, and enthusiasts from diverse backgrounds
-							to share insights, collaborate, and push the boundaries of neuromorphic computing. </p>
-					<h4 style="text-align: center;">Diversity drives discovery</h4>
-
-					<h3>What to Expect</h3>
-					<p>Engage with lectures, hands-on daily hackathons, collaborative group projects, insightful panel discussions, and unwind
-					in the evenings with board games and social activities.</p>
-					</div>
-				</section>
-
-				</div>
-
-			<!-- Dates & Venue Section -->
-				<div class="wrapper style2">
-
-				<section id="dates" class="container special">
-					<header>
-						<h2>Dates & Venue</h2>
-					</header>
-
-					<div style="max-width: 900px; margin: 0 auto; text-align: center;">
-						<h3 style="margin-top: 1em;">June 15-26, 2026</h3>
-						<h4>University of Waterloo, Waterloo, Ontario, Canada</h4>
-					</div>
-				</section>
-
-				</div>
-
-			<!-- Registration Fees Section -->
-				<div class="wrapper style1" style="padding-top: 2em;">
-
-				<section id="registration" class="container special">
-					<header>
-						<h2>Registration Fees</h2>
-					</header>
-
-					<div style="max-width: 900px; margin: 0 auto; text-align: center;">
-						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin: 2em auto; max-width: 700px;">
-							<!-- Academic Fee -->
-							<div style="padding: 1.5em; background-color: #f5f5f5; border: 2px solid #ddd; border-radius: 8px;">
-								<h4 style="margin-top: 0; color: #333;">Academic</h4>
-								<p style="font-size: 2em; font-weight: bold; color: #2196F3; margin: 0.5em 0; white-space: nowrap;">$900 CAD (~€558)</p>
-								<p style="font-size: 0.9em; color: #666; margin: 0;">Students, postdocs, and academic researchers</p>
-							</div>
-
-							<!-- Industry Fee -->
-							<div style="padding: 1.5em; background-color: #f5f5f5; border: 2px solid #ddd; border-radius: 8px;">
-								<h4 style="margin-top: 0; color: #333;">Industry</h4>
-								<p style="font-size: 2em; font-weight: bold; color: #4CAF50; margin: 0.5em 0; white-space: nowrap;">$1500 CAD (~€930)</p>
-								<p style="font-size: 0.9em; color: #666; margin: 0;">Industry professionals and corporate participants</p>
-							</div>
-						</div>
-
-						<!-- Currency Converter -->
-						<div style="margin: 2em auto; padding: 1.5em; background-color: #f5f5f5; border-radius: 8px; max-width: 600px;">
-							<p style="margin-bottom: 1em; font-weight: 600;">Convert to your currency:</p>
-							<div style="display: flex; align-items: center; justify-content: center; gap: 1em; flex-wrap: wrap;">
-								<select id="fee-type" style="padding: 0.5em; font-size: 1em; border-radius: 4px; border: 1px solid #ccc;">
-									<option value="900">Academic - $900 CAD</option>
-									<option value="1500">Industry - $1500 CAD</option>
-								</select>
-								<select id="currency" style="padding: 0.5em; font-size: 1em; border-radius: 4px; border: 1px solid #ccc;">
-									<option value="USD">USD - US Dollar</option>
-									<option value="EUR">EUR - Euro</option>
-									<option value="GBP">GBP - British Pound</option>
-									<option value="JPY">JPY - Japanese Yen</option>
-									<option value="AUD">AUD - Australian Dollar</option>
-									<option value="CHF">CHF - Swiss Franc</option>
-									<option value="CNY">CNY - Chinese Yuan</option>
-									<option value="INR">INR - Indian Rupee</option>
-									<option value="BRL">BRL - Brazilian Real</option>
-									<option value="CZK">CZK - Czech Koruna</option>
-								</select>
-								<button onclick="convertCurrency()" style="padding: 0.5em 1.5em; font-size: 1em; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Convert</button>
-							</div>
-							<p id="conversion-result" style="margin-top: 1em; font-size: 1.2em; font-weight: bold; color: #333;"></p>
-							<p style="margin-top: 0.5em; font-size: 0.85em; color: #666; font-style: italic;">Exchange rates updated daily</p>
-						</div>
-
-					<p style="margin-top: 1.5em; text-align: left;">
-						The registration fee includes workshop attendance <strong>for the full 12-day duration (June 15-26)</strong>, daily lunch, daily coffee breaks, final banquet, and access to all workshop facilities and events. Accommodation is NOT provided in the registration fee.
+			<div id="header">
+				<div class="inner">
+				  <header class="spaced-header">
+					<h1>Canadian Neuromorphic Engineering Workshop</h1>
+					<p style="text-align: center;">
+					  Where neuroscience meets engineering, biology inspires computation, and diverse minds <br />
+					  converge to unlock the secrets of intelligent systems.
 					</p>
-
-					</div>
-				</section>
-
-				</div>
-
-			<!-- Application Section -->
-				<div class="wrapper style2">
-
-				<section id="application" class="container special">
-					<header>
-						<h2>Application</h2>
-					</header>
-
-					<div style="max-width: 900px; margin: 0 auto; text-align: center;">
-						<div style="margin: 1.5em auto; padding: 1em; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; max-width: 600px;">
-							<p style="margin: 0; color: #856404;">
-								<strong>⏰ Application Deadline: April 20, 2026</strong><br/>
-								You will receive a decision and registration details in one/two weeks after your application has been received.
-								Please get in touch if you have not received a response in this time frame.<br/>
-								<strong>⏰ Invited Discussion Leaders Application Deadline: March 9, 2026</strong><br/>
-							</p>
-						</div>
-
-						<div style="margin-top: 2em; padding: 2em; background-color: #f5f5f5; border: 2px solid #ddd; border-radius: 8px;">
-							<h3 style="margin-top: 0; margin-bottom: 0.5em;font-size: 1.2em;">Application Form</h3>
-							<p style="margin-bottom: 1em;">Complete the application form to register for CNEW 2026</p>
-							<p style="margin-bottom: 1.5em; font-size: 1.2em; color: #555; font-weight: bold;">
-								📧 Upon decision, you will receive a letter of invitation as soon as possible for VISA application purposes.
-							</p>
-							<a href="https://docs.google.com/forms/d/e/1FAIpQLScJ1A7qGFRdMFnu68HBgNdDH4XkcD8ZbNYn6b5EWDtKeeq_yw/viewform"
-							   target="_blank"
-							   style="display: inline-block; padding: 1em 2em; background-color: #555; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s;">
-								Apply Now →
-							</a>
-						</div>
-					</div>
-				</section>
-
-				</div>
-
-			<!-- Accommodation Section -->
-				<div class="wrapper style1">
-
-				<section id="accommodation" class="container special">
-					<header>
-						<h2>Accommodation</h2>
-					</header>
-
-					<div style="max-width: 900px; margin: 0 auto; text-align: left;">
-						<p style="margin-bottom: 2em;">
-							We have arranged convenient on-campus housing options at the University of Waterloo for workshop participants.
-							Two accommodation styles are available to suit different preferences and budgets.
-							While we recommend these options for their proximity and convenience, you're welcome to explore alternative accommodations in the Waterloo area.
-						</p>
-
-						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em; margin-bottom: 2em;">
-
-							<!-- Ron Eydt Village (REV) -->
-							<div style="border: 2px solid #ddd; padding: 1.5em; border-radius: 8px;">
-								<h3 style="margin-top: 0;">Ron Eydt Village (REV)</h3>
-								<p><strong>Style:</strong> Traditional residence</p>
-								<p><strong>Room Type:</strong> Shared double room</p>
-								<p style="background-color: #e3f2fd; padding: 0.75em; border-radius: 4px; margin: 1em 0;"><strong>Approx. Cost:</strong> ~980.84 CAD (~€607) for 14 nights for 1 person (490.42 per person if you share) - $62/night + 13% HST single/double occupancy for a Double Room</p>
-								<p><strong>Features:</strong></p>
-								<ul style="font-size: 0.95em; line-height: 1.6;">
-									<li>Shared lockable bedroom with one roommate</li>
-									<li>Two twin beds, desks, and closets per room</li>
-									<li>Shared gender-specific washrooms on each floor</li>
-									<li>24/7 front desk</li>
-									<li>Community centre with fitness room, pool tables, and study spaces</li>
-									<li>On-site dining at REVelation</li>
-									<li>Laundry facilities</li>
-									<li>High-speed wireless internet</li>
-								</ul>
-								<p style="margin-top: 1em;">
-									<a href="https://uwaterloo.ca/campus-housing/residences/rev" target="_blank" style="font-weight: bold;">Learn more about REV →</a>
-								</p>
+					<h2>Organisers</h2>
+					<small>In alphabetical order</small>
+					<div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 2em; flex-wrap: wrap; margin-top: 1em;">
+						<figure style="width: 150px; text-align: center; margin: 0;">
+							<div style="width: 150px; height: 150px; margin: 0 auto;">
+								<img src="images/giulia.png" alt="Giulia D'Angelo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
 							</div>
-
-							<!-- Mackenzie King Village (MKV) -->
-							<div style="border: 2px solid #ddd; padding: 1.5em; border-radius: 8px;">
-								<h3 style="margin-top: 0;">Mackenzie King Village (MKV)</h3>
-								<p><strong>Style:</strong> Suite-style residence</p>
-								<p><strong>Room Type:</strong> Private room in 4-bedroom suite</p>
-								<p style="background-color: #e3f2fd; padding: 0.75em; border-radius: 4px; margin: 1em 0;"><strong>Approx. Cost:</strong> ~2404.64 CAD (~€1489) for 14 nights (~601.16 CAD (~€372) for 1 person if you are 4 people) - $152/night + 13% HST for a 4-bedroom apartment - YOU NEED TO BE A GROUP OF 4, please contact us and we can arrage the groups.</p>
-								<p><strong>Features:</strong></p>
-								<ul style="font-size: 0.95em; line-height: 1.6;">
-									<li>Private lockable bedroom</li>
-									<li>Shared suite with 3 other participants</li>
-									<li>Two single-occupancy lockable washrooms per suite</li>
-									<li>Shared kitchen with full-sized fridge and stove</li>
-									<li>Shared living room area</li>
-									<li>Air conditioning (only suite-style with A/C)</li>
-									<li>Community centre with game room</li>
-									<li>Laundry facilities</li>
-									<li>High-speed wireless internet</li>
-								</ul>
-								<p style="margin-top: 1em;">
-									<a href="https://uwaterloo.ca/campus-housing/residences/mkv" target="_blank" style="font-weight: bold;">Learn more about MKV →</a>
-								</p>
+							<figcaption style="margin-top: 0.5em; font-weight: 600;">Giulia D'Angelo</figcaption>
+						</figure>
+						<figure style="width: 150px; text-align: center; margin: 0;">
+							<div style="width: 150px; height: 150px; margin: 0 auto;">
+								<img src="images/jamie.jpeg" alt="Jamie Knight" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
 							</div>
+							<figcaption style="margin-top: 0.5em; font-weight: 600;">Jamie Knight</figcaption>
+						</figure>
+						<figure style="width: 150px; text-align: center; margin: 0;">
+							<div style="width: 150px; height: 150px; margin: 0 auto;">
+								<img src="images/michael.jpeg" alt="Michael Furlong" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+							</div>
+							<figcaption style="margin-top: 0.5em; font-weight: 600;">Michael Furlong</figcaption>
+						</figure>
+						<figure style="width: 150px; text-align: center; margin: 0;">
+							<div style="width: 150px; height: 150px; margin: 0 auto;">
+								<img src="images/terry.jpeg" alt="Terry Stewart" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+							</div>
+							<figcaption style="margin-top: 0.5em; font-weight: 600;">Terry Stewart</figcaption>
+						</figure>
+					</div>
+					<hr />
+				  </header>
+				</div>
+			</div>
 
+			<!-- About -->
+			<div class="wrapper style1">
+			<section id="about" class="container special" style="scroll-margin-top: 60px;">
+				<header>
+				<h2>Welcome to the <strong>Canadian Neuromorphic Engineering Workshop</strong></h2>
+				<p style="font-style: italic; font-size: 1.1em;">"The brain is imagination, and that was exciting to me; I wanted to build a chip that could imagine something" — Misha Mahowald</p>
+				</header>
+				<div style="max-width: 900px; margin: 0 auto; text-align: left;">
+					<h3>About the Workshop</h3>
+					<p>Join us for an exciting convergence of minds! This workshop brings together researchers, engineers, neuroscientists, computational scientists, roboticists, and enthusiasts from diverse backgrounds to share insights, collaborate, and push the boundaries of neuromorphic computing.</p>
+					<h4 style="text-align: center;">Diversity drives discovery</h4>
+					<h3>What to Expect</h3>
+					<p>Engage with lectures, hands-on daily hackathons, collaborative group projects, insightful panel discussions, and unwind in the evenings with board games and social activities.</p>
+				</div>
+			</section>
+			</div>
+
+			<!-- Dates & Venue -->
+			<div class="wrapper style2">
+			<section id="dates" class="container special" style="scroll-margin-top: 60px;">
+				<header><h2>Dates &amp; Venue</h2></header>
+				<div style="max-width: 900px; margin: 0 auto; text-align: center;">
+					<h3 style="margin-top: 1em;">June 15–26, 2026</h3>
+					<h4>University of Waterloo, Waterloo, Ontario, Canada</h4>
+				</div>
+			</section>
+			</div>
+
+			<!-- Registration -->
+			<div class="wrapper style1" style="padding-top: 2em;">
+			<section id="registration" class="container special" style="scroll-margin-top: 60px;">
+				<header><h2>Registration Fees</h2></header>
+				<div style="max-width: 900px; margin: 0 auto; text-align: center;">
+					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin: 2em auto; max-width: 700px;">
+						<div style="padding: 1.5em; background-color: #f5f5f5; border: 2px solid #ddd; border-radius: 8px;">
+							<h4 style="margin-top: 0; color: #333;">Academic</h4>
+							<p style="font-size: 2em; font-weight: bold; color: #2196F3; margin: 0.5em 0; white-space: nowrap;">$900 CAD (~€558)</p>
+							<p style="font-size: 0.9em; color: #666; margin: 0;">Students, postdocs, and academic researchers</p>
 						</div>
+						<div style="padding: 1.5em; background-color: #f5f5f5; border: 2px solid #ddd; border-radius: 8px;">
+							<h4 style="margin-top: 0; color: #333;">Industry</h4>
+							<p style="font-size: 2em; font-weight: bold; color: #4CAF50; margin: 0.5em 0; white-space: nowrap;">$1500 CAD (~€930)</p>
+							<p style="font-size: 0.9em; color: #666; margin: 0;">Industry professionals and corporate participants</p>
+						</div>
+					</div>
+					<div style="margin: 2em auto; padding: 1.5em; background-color: #f5f5f5; border-radius: 8px; max-width: 600px;">
+						<p style="margin-bottom: 1em; font-weight: 600;">Convert to your currency:</p>
+						<div style="display: flex; align-items: center; justify-content: center; gap: 1em; flex-wrap: wrap;">
+							<select id="fee-type" style="padding: 0.5em; font-size: 1em; border-radius: 4px; border: 1px solid #ccc;">
+								<option value="900">Academic - $900 CAD</option>
+								<option value="1500">Industry - $1500 CAD</option>
+							</select>
+							<select id="currency" style="padding: 0.5em; font-size: 1em; border-radius: 4px; border: 1px solid #ccc;">
+								<option value="USD">USD - US Dollar</option>
+								<option value="EUR">EUR - Euro</option>
+								<option value="GBP">GBP - British Pound</option>
+								<option value="JPY">JPY - Japanese Yen</option>
+								<option value="AUD">AUD - Australian Dollar</option>
+								<option value="CHF">CHF - Swiss Franc</option>
+								<option value="CNY">CNY - Chinese Yuan</option>
+								<option value="INR">INR - Indian Rupee</option>
+								<option value="BRL">BRL - Brazilian Real</option>
+								<option value="CZK">CZK - Czech Koruna</option>
+							</select>
+							<button onclick="convertCurrency()" style="padding: 0.5em 1.5em; font-size: 1em; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Convert</button>
+						</div>
+						<p id="conversion-result" style="margin-top: 1em; font-size: 1.2em; font-weight: bold; color: #333;"></p>
+						<p style="margin-top: 0.5em; font-size: 0.85em; color: #666; font-style: italic;">Exchange rates updated daily</p>
+					</div>
+					<p style="margin-top: 1.5em; text-align: left;">
+						The registration fee includes workshop attendance <strong>for the full 12-day duration (June 15–26)</strong>, daily lunch, daily coffee breaks, final banquet, and access to all workshop facilities and events. Accommodation is NOT provided in the registration fee.
+					</p>
+				</div>
+			</section>
+			</div>
 
-						<p style="text-align: center; font-size: 1.05em; margin-top: 2em;">
-							<strong>Note:</strong> All utilities (heat, electricity, water, internet) are included.
-							Accommodation preferences can be indicated during registration.
+			<!-- Application -->
+			<div class="wrapper style2">
+			<section id="application" class="container special" style="scroll-margin-top: 60px;">
+				<header><h2>Application</h2></header>
+				<div style="max-width: 900px; margin: 0 auto; text-align: center;">
+					<div style="margin: 1.5em auto; padding: 1em; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; max-width: 600px;">
+						<p style="margin: 0; color: #856404;">
+							<strong>Application Deadline: April 20, 2026</strong><br/>
+							You will receive a decision and registration details within one to two weeks of your application being received. Please get in touch if you have not heard back in this time frame.<br/><br/>
+							<strong>Invited Discussion Leaders Deadline: March 9, 2026</strong>
 						</p>
 					</div>
-				</section>
-
-				</div>
-
-			<!-- Program Schedule Section -->
-				<div class="wrapper style2">
-
-				<section id="schedule" class="container special">
-					<header>
-						<h2>Program Schedule</h2>
-					</header>
-
-					<div style="max-width: 900px; margin: 0 auto; text-align: left;">
-						<p style="text-align: center; margin-bottom: 2em;">
-							A detailed daily schedule will be announced closer to the workshop date. Below is an overview of the program structure:
+					<div style="margin-top: 2em; padding: 2em; background-color: #f5f5f5; border: 2px solid #ddd; border-radius: 8px;">
+						<h3 style="margin-top: 0; margin-bottom: 0.5em; font-size: 1.2em;">Application Form</h3>
+						<p style="margin-bottom: 1em;">Complete the application form to register for CNEW 2026</p>
+						<p style="margin-bottom: 1.5em; font-size: 1.1em; color: #555; font-weight: bold;">
+							Upon decision, you will receive a letter of invitation as soon as possible for VISA application purposes.
 						</p>
-
-						<!-- Schedule Overview -->
-						<div style="background-color: #f5f5f5; padding: 2em; border-radius: 8px; margin-bottom: 2em;">
-							<h3 style="margin-top: 0;">Daily Structure</h3>
-							<div style="display: grid; grid-template-columns: 1fr; gap: 1em;">
-								<div style="padding: 1em; background-color: white; border-left: 4px solid #2196F3; border-radius: 4px;">
-									<strong>Morning Sessions (9:00 AM - 1:00 PM)</strong>
-									<p style="margin: 0.5em 0 0 0; color: #666;">Expert lectures and keynote presentations</p>
-								</div>
-								<div style="padding: 1em; background-color: white; border-left: 4px solid #4CAF50; border-radius: 4px;">
-									<strong>Lunch break (1:00 PM - 2:30 PM)</strong>
-									<p style="margin: 0.5em 0 0 0; color: #666;">Lunch break in the common area.</p>
-								</div>
-								<div style="padding: 1em; background-color: white; border-left: 4px solid #2196F3; border-radius: 4px;">
-									<strong>Afternoon Sessions (2:30 PM - 7:00 PM)</strong>
-									<p style="margin: 0.5em 0 0 0; color: #666;">Hands-on hackathons, group projects</p>
-								</div>
-								<div style="padding: 1em; background-color: white; border-left: 4px solid #4CAF50; border-radius: 4px;">
-									<strong>Dinner (7:00 PM - 8:30 PM)</strong>
-								</div>
-								<div style="padding: 1em; background-color: white; border-left: 4px solid #FF9800; border-radius: 4px;">
-									<strong>Evening Activities (After 8:30:00 PM)</strong>
-									<p style="margin: 0.5em 0 0 0; color: #666;">Social events, board games, and networking opportunities</p>
-								</div>
-							</div>
-
-							<p style="text-align: center; margin-top: 2em; font-style: italic; color: #666;">
-							Full schedule with session titles, speakers, and detailed timings will be released in May 2026.
-						</p>
-						</div>
-
-
+						<a href="https://docs.google.com/forms/d/e/1FAIpQLScJ1A7qGFRdMFnu68HBgNdDH4XkcD8ZbNYn6b5EWDtKeeq_yw/viewform"
+						   target="_blank"
+						   style="display: inline-block; padding: 1em 2em; background-color: #555; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em;">
+							Apply Now →
+						</a>
 					</div>
-				</section>
+				</div>
+			</section>
+			</div>
 
+			<!-- Accommodation -->
+			<div class="wrapper style1">
+			<section id="accommodation" class="container special" style="scroll-margin-top: 60px;">
+				<header><h2>Accommodation</h2></header>
+				<div style="max-width: 900px; margin: 0 auto; text-align: left;">
+					<p style="margin-bottom: 2em;">We have arranged convenient on-campus housing options at the University of Waterloo for workshop participants. Two accommodation styles are available to suit different preferences and budgets. While we recommend these options for their proximity and convenience, you're welcome to explore alternative accommodations in the Waterloo area.</p>
+					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em; margin-bottom: 2em;">
+						<div style="border: 2px solid #ddd; padding: 1.5em; border-radius: 8px;">
+							<h3 style="margin-top: 0;">Ron Eydt Village (REV)</h3>
+							<p><strong>Style:</strong> Traditional residence</p>
+							<p><strong>Room Type:</strong> Shared double room</p>
+							<p style="background-color: #e3f2fd; padding: 0.75em; border-radius: 4px; margin: 1em 0;"><strong>Approx. Cost:</strong> ~980.84 CAD (~€607) for 14 nights for 1 person (490.42 per person if shared) — $62/night + 13% HST</p>
+							<p><strong>Features:</strong></p>
+							<ul style="font-size: 0.95em; line-height: 1.6;">
+								<li>Shared lockable bedroom with one roommate</li>
+								<li>Two twin beds, desks, and closets per room</li>
+								<li>Shared gender-specific washrooms on each floor</li>
+								<li>24/7 front desk</li>
+								<li>Community centre with fitness room, pool tables, and study spaces</li>
+								<li>On-site dining at REVelation</li>
+								<li>Laundry facilities</li>
+								<li>High-speed wireless internet</li>
+							</ul>
+							<p style="margin-top: 1em;"><a href="https://uwaterloo.ca/campus-housing/residences/rev" target="_blank" style="font-weight: bold;">Learn more about REV →</a></p>
+						</div>
+						<div style="border: 2px solid #ddd; padding: 1.5em; border-radius: 8px;">
+							<h3 style="margin-top: 0;">Mackenzie King Village (MKV)</h3>
+							<p><strong>Style:</strong> Suite-style residence</p>
+							<p><strong>Room Type:</strong> Private room in 4-bedroom suite</p>
+							<p style="background-color: #e3f2fd; padding: 0.75em; border-radius: 4px; margin: 1em 0;"><strong>Approx. Cost:</strong> ~2404.64 CAD (~€1489) for 14 nights (~601.16 CAD per person in a group of 4) — $152/night + 13% HST. You need to be a group of 4 — contact us and we can arrange groups.</p>
+							<p><strong>Features:</strong></p>
+							<ul style="font-size: 0.95em; line-height: 1.6;">
+								<li>Private lockable bedroom</li>
+								<li>Shared suite with 3 other participants</li>
+								<li>Two single-occupancy lockable washrooms per suite</li>
+								<li>Shared kitchen with full-sized fridge and stove</li>
+								<li>Shared living room area</li>
+								<li>Air conditioning (only suite-style with A/C)</li>
+								<li>Community centre with game room</li>
+								<li>Laundry facilities</li>
+								<li>High-speed wireless internet</li>
+							</ul>
+							<p style="margin-top: 1em;"><a href="https://uwaterloo.ca/campus-housing/residences/mkv" target="_blank" style="font-weight: bold;">Learn more about MKV →</a></p>
+						</div>
+					</div>
+					<p style="text-align: center; font-size: 1.05em; margin-top: 2em;">
+						<strong>Note:</strong> All utilities (heat, electricity, water, internet) are included. Accommodation preferences can be indicated during registration.
+					</p>
+				</div>
+			</section>
+			</div>
+
+			<!-- Discussion Leaders -->
+			<div class="wrapper style2">
+			<section id="leaders" class="container special" style="scroll-margin-top: 60px;">
+				<header>
+					<h2>Discussion Leaders &amp; Topics</h2>
+					<p style="font-style: italic; color: #666; max-width: 700px; margin: 0 auto;">
+						World-wide experts bringing interactive discussions and hands-on tutorials.
+					</p>
+				</header>
+
+				<div class="leaders-grid">
+
+					<!-- Luca Peres -->
+					<div class="leader-card">
+						<div style="background: linear-gradient(135deg, #1a237e 0%, #283593 100%); padding: 2em 1.5em 1.5em; text-align: center;">
+							<img src="images/people/luca.jpeg" alt="Luca Peres" class="leader-photo" />
+							<h3 style="color:#fff; margin:0.75em 0 0.1em; font-size:1.1em;">Luca Peres</h3>
+							<p style="color:#90CAF9; margin:0; font-size:0.85em;">University of Manchester</p>
+						</div>
+						<div class="leader-body">
+							<div style="margin-bottom:0.75em;">
+								<span class="tag tag-lecture">Talk</span>
+								<span class="tag tag-tutorial">Tutorial</span>
+								<span class="tag tag-project">Hackathon</span>
+							</div>
+							<div class="leader-talks">
+								<h4>Large-Scale SNNs on Neuromorphic Hardware</h4>
+								<p>Real-time simulation of biologically-representative spiking neural networks at scale, and the practical challenges of mapping them onto neuromorphic hardware.</p>
+								<h4>Event-Driven Sensing for Edge Vision</h4>
+								<p>Event-based sensor fusion for computer vision at the edge — covering in-sensor and near-sensor computing paradigms for low-power deployments.</p>
+								<h4>Tutorial: Beyond von Neumann</h4>
+								<p>Hands-on exploration of neuromorphic architectures designed to overcome the memory-bandwidth bottleneck.</p>
+							</div>
+							<div class="project-box">
+								<h5>Project Ideas</h5>
+								<p>Real-time event-based sensor fusion pipeline · Benchmark SNNs across neuromorphic platforms · In-sensor processing to beat the von Neumann bottleneck</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Ján Antolík -->
+					<div class="leader-card">
+						<div style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); padding: 2em 1.5em 1.5em; text-align: center;">
+							<img src="images/people/jan.jpeg" alt="Ján Antolík" class="leader-photo" />
+							<h3 style="color:#fff; margin:0.75em 0 0.1em; font-size:1.1em;">Ján Antolík</h3>
+							<p style="color:#A5D6A7; margin:0; font-size:0.85em;">Charles University, Prague</p>
+						</div>
+						<div class="leader-body">
+							<div style="margin-bottom:0.75em;">
+								<span class="tag tag-lecture">Talk</span>
+								<span class="tag tag-tutorial">Tutorial</span>
+							</div>
+							<div class="leader-talks">
+								<h4>Visual Processing & Sensory Coding</h4>
+								<p>How visual information is transformed across the stages of the visual hierarchy to form everyday perception — bridging large-scale spiking network models, rate-based models, and machine learning.</p>
+								<h4>Neuroprosthetic Vision Restoration</h4>
+								<p>Applying computational neuroscience to design stimulation protocols for future sensory prosthetic systems, from biological modelling to practical implant design.</p>
+								<h4>Tutorial: Quantified Self & Teaching with Neurons</h4>
+								<p>An hands-on session exploring self-tracking data through a neuroscience lens, and pedagogical approaches for teaching computational concepts with spiking models.</p>
+							</div>
+							<div class="project-box">
+								<h5>Project Ideas</h5>
+								<p>Model a stage of the visual hierarchy and benchmark it against neural recordings · Design a closed-loop stimulation protocol for a simplified prosthetic vision system · Apply sensory coding principles to compress or denoise real-world visual data</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Elena Petri -->
+					<div class="leader-card">
+						<div style="background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%); padding: 2em 1.5em 1.5em; text-align: center;">
+							<img src="images/people/elena.jpg" alt="Elena Petri" class="leader-photo" />
+							<h3 style="color:#fff; margin:0.75em 0 0.1em; font-size:1.1em;">Elena Petri</h3>
+							<p style="color:#CE93D8; margin:0; font-size:0.85em;">Eindhoven University of Technology</p>
+						</div>
+						<div class="leader-body">
+							<div style="margin-bottom:0.75em;">
+								<span class="tag tag-lecture">Talk</span>
+								<span class="tag tag-tutorial">Tutorial</span>
+								<span class="tag tag-project">Hackathon</span>
+							</div>
+							<div class="leader-talks">
+								<h4>Neuromorphic Control Systems</h4>
+								<p>An introduction to neuromorphic approaches to control engineering — from theoretical foundations in nonlinear observers and hybrid dynamical systems to practical spiking controller designs for linear systems.</p>
+								<h4>Spiking Controllers in the Wild</h4>
+								<p>Case studies from cutting-edge applications: including neuromorphic control of nuclear fusion plasma fuelling with ice pellets — a striking demonstration of spike-based control in a safety-critical setting.</p>
+								<h4>Tutorial: From Control Theory to Neuromorphic Hardware</h4>
+								<p>Hands-on session bridging classical control design with neuromorphic implementation, covering how to analyse and deploy spiking controllers on real systems.</p>
+							</div>
+							<div class="project-box">
+								<h5>Project Ideas</h5>
+								<p>Design and analyse a simple neuromorphic controller for a physical system · Compare spiking vs. classical controllers on stability and energy metrics · Implement a closed-loop neuromorphic control pipeline on neuromorphic hardware</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Jamie Knight -->
+					<div class="leader-card">
+						<div style="background: linear-gradient(135deg, #bf360c 0%, #d84315 100%); padding: 2em 1.5em 1.5em; text-align: center;">
+							<img src="images/jamie.jpeg" alt="Jamie Knight" class="leader-photo" />
+							<h3 style="color:#fff; margin:0.75em 0 0.1em; font-size:1.1em;">Jamie Knight</h3>
+							<p style="color:#FFCCBC; margin:0; font-size:0.85em;">University of Sussex</p>
+						</div>
+						<div class="leader-body">
+							<div style="margin-bottom:0.75em;">
+								<span class="tag tag-lecture">Talk</span>
+								<span class="tag tag-tutorial">Tutorial</span>
+								<span class="tag tag-project">Hackathon</span>
+							</div>
+							<div class="leader-talks">
+								<h4>Insect Navigation &amp; Vision</h4>
+								<p>Key differences from mammalian vision, efficient navigation strategies, and their relevance to low-power neuromorphic computation. Ideally paired with a mammalian vision session.</p>
+								<h4>Intro to Neuromorphic Engineering</h4>
+								<p>A broad overview of the landscape — analogue vs. digital approaches and example systems, based on MSc-level teaching material.</p>
+								<h4>Tutorial: GeNN / mlGeNN</h4>
+								<p>GPU-accelerated spiking neural network simulation with GeNN and its machine learning companion mlGeNN.</p>
+							</div>
+							<div class="project-box">
+								<h5>Project Ideas</h5>
+								<p>Deploy insect-inspired navigation models on robots · Extend biological models with new behavioural tasks · Implement insect vision circuits on neuromorphic hardware</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Nolan Shaw -->
+					<div class="leader-card">
+						<div style="background: linear-gradient(135deg, #37474f 0%, #546e7a 100%); padding: 2em 1.5em 1.5em; text-align: center;">
+							<img src="images/people/nolan.png" alt="Nolan Shaw" class="leader-photo" />
+							<h3 style="color:#fff; margin:0.75em 0 0.1em; font-size:1.1em;">Nolan Shaw</h3>
+							<p style="color:#CFD8DC; margin:0; font-size:0.85em;">University of Waterloo</p>
+						</div>
+						<div class="leader-body">
+							<div style="margin-bottom:0.75em;">
+								<span class="tag tag-lecture">Talk</span>
+								<span class="tag tag-tutorial">Tutorial</span>
+							</div>
+							<div class="leader-talks">
+								<h4>Category Theory for Data Science & Neural Computing</h4>
+								<p>How abstract mathematics — lenses, optics, and functorial structures — provides a rigorous and compositional framework for thinking about learning systems and data transformations.</p>
+								<h4>Vector Symbolic Architectures & Hyperdimensional Computing</h4>
+								<p>An accessible introduction to VSAs through the lens of category theory and functional programming — connecting high-dimensional representations to structured reasoning in neuromorphic systems.</p>
+								<h4>Tutorial: Local Learning Rules in Deep Networks</h4>
+								<p>Applying information theory to derive biologically-plausible, local learning rules as alternatives to backpropagation — with hands-on exercises implementing and evaluating them in practice.</p>
+							</div>
+							<div class="project-box">
+								<h5>Project Ideas</h5>
+								<p>Implement and compare local vs. global learning rules on a spiking network · Encode a structured reasoning task using VSAs and category-theoretic composition · Build a functional programming interface for neuromorphic model specification</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Terry Stewart -->
+					<div class="leader-card">
+						<div style="background: linear-gradient(135deg, #33691e 0%, #558b2f 100%); padding: 2em 1.5em 1.5em; text-align: center;">
+							<img src="images/terry.jpeg" alt="Terry Stewart" class="leader-photo" />
+							<h3 style="color:#fff; margin:0.75em 0 0.1em; font-size:1.1em;">Terry Stewart</h3>
+							<p style="color:#DCEDC8; margin:0; font-size:0.85em;">University of Waterloo</p>
+						</div>
+						<div class="leader-body">
+							<div style="margin-bottom:0.75em;">
+								<span class="tag tag-lecture">Talk</span>
+								<span class="tag tag-tutorial">Tutorial</span>
+								<span class="tag tag-project">Hackathon</span>
+							</div>
+							<div class="leader-talks">
+								<h4>How the Brain Works — and How to Build It</h4>
+								<p>A three-part arc: how the brain computes, how to engineer systems that follow the same principles, and how to put those systems to practical use.</p>
+								<h4>Tutorial: Introduction to Nengo</h4>
+								<p>Hands-on introduction to Nengo for building and simulating large-scale brain-inspired models across multiple hardware backends.</p>
+								<h4>Tutorial: Efficient Representations of Time and Space</h4>
+								<p>How spiking networks encode temporal and spatial information efficiently, with practical exercises building such representations from scratch.</p>
+							</div>
+							<div class="project-box">
+								<h5>Project Ideas</h5>
+								<p>Cross-hardware benchmarking: GPUs, SpiNNaker, Braindrop · Activation steering for LLM behaviour · Neuromorphic control of a Lego pinball table · Implementing Beat Saber in neurons</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Giulia D'Angelo -->
+					<div class="leader-card">
+						<div style="background: linear-gradient(135deg, #880e4f 0%, #ad1457 100%); padding: 2em 1.5em 1.5em; text-align: center;">
+							<img src="images/giulia.png" alt="Giulia D'Angelo" class="leader-photo" />
+							<h3 style="color:#fff; margin:0.75em 0 0.1em; font-size:1.1em;">Giulia D'Angelo</h3>
+							<p style="color:#F48FB1; margin:0; font-size:0.85em;">Czech Technical University in Prague</p>
+						</div>
+						<div class="leader-body">
+							<div style="margin-bottom:0.75em;">
+								<span class="tag tag-lecture">Talk</span>
+								<span class="tag tag-tutorial">Tutorial</span>
+								<span class="tag tag-project">Hackathon</span>
+							</div>
+							<div class="leader-talks">
+								<h4>Mammalian Vision & Event-Based Perception</h4>
+								<p>How the mammalian visual system processes the world — from retinal encoding to cortical representations — and how these principles translate into neuromorphic vision systems using dynamic vision sensors.</p>
+								<h4>Attention & Microsaccades in Neuromorphic Systems</h4>
+								<p>Biologically-inspired active vision: how microsaccadic eye movements drive efficient scene exploration, and how to implement event-based attention mechanisms on neuromorphic hardware.</p>
+								<h4>Tutorial: DVS Cameras & SpiNNaker</h4>
+								<p>Hands-on session working with dynamic vision sensors and the SpiNNaker platform — from raw event streams to real-time spiking network deployment for computer vision tasks.</p>
+							</div>
+							<div class="project-box">
+								<h5>Project Ideas</h5>
+								<p>Real-time sign language recognition with DVS cameras and SNNs · Event-based object detection pipeline on SpiNNaker · Bio-inspired active vision system with microsaccadic control</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Michael Furlong -->
+					<div class="leader-card">
+						<div style="background: linear-gradient(135deg, #006064 0%, #00838f 100%); padding: 2em 1.5em 1.5em; text-align: center;">
+							<img src="images/michael.jpeg" alt="Michael Furlong" class="leader-photo" />
+							<h3 style="color:#fff; margin:0.75em 0 0.1em; font-size:1.1em;">Michael Furlong</h3>
+							<p style="color:#B2EBF2; margin:0; font-size:0.85em;">National Research Council of Canada · University of Waterloo</p>
+						</div>
+						<div class="leader-body">
+							<div style="margin-bottom:0.75em;">
+								<span class="tag tag-lecture">Talk</span>
+								<span class="tag tag-tutorial">Tutorial</span>
+								<span class="tag tag-project">Hackathon</span>
+							</div>
+							<div class="leader-talks">
+								<h4>Probabilistic Neuromorphic Programming</h4>
+								<p>A new paradigm for programming neuromorphic systems probabilistically — bridging cognitive architectures, generative models, and Vector Symbolic Algebras for principled uncertainty handling in spiking networks.</p>
+								<h4>Biologically-Plausible Spatial Reasoning & SLAM</h4>
+								<p>From planetary robotics to neural SLAM: how biologically-inspired representations enable efficient exploration, mapping, and localisation — drawing on work at NASA Ames and the NRC.</p>
+								<h4>Tutorial: Vector Symbolic Architectures</h4>
+								<p>Hands-on introduction to VSAs as a framework for structured, compositional representations in spiking neural networks — covering binding, bundling, and probabilistic inference in high-dimensional spaces.</p>
+							</div>
+							<div class="project-box">
+								<h5>Project Ideas</h5>
+								<p>Implement a spiking neural SLAM system using VSA-encoded spatial representations · Build a neuromorphic Markov Chain Monte Carlo sampler · Apply VSA-based exploration strategies to a simulated robot navigation task</p>
+							</div>
+						</div>
+					</div>
+
+				</div><!-- end leaders-grid -->
+
+				<div style="margin-top:3em; padding:1.2em 2em; background:#fff8e1; border-left:4px solid #FFC107; border-radius:4px; max-width:700px; margin-left:auto; margin-right:auto; text-align:center;">
+					<p style="margin:0; color:#795548; font-size:0.95em;">
+						<strong>More discussion leaders will be announced soon.</strong><br/>
+						Confirmed speakers and their full bios will be updated as invitations are accepted.
+					</p>
 				</div>
 
-			<!-- Footer -->
+			</section>
+			</div>
+
+			<!-- Schedule -->
+			<div class="wrapper style1">
+			<section id="schedule" class="container special" style="scroll-margin-top: 60px;">
+				<header><h2>Program Schedule</h2></header>
+				<div style="max-width: 900px; margin: 0 auto; text-align: left;">
+					<p style="text-align: center; margin-bottom: 2em;">A detailed daily schedule will be announced closer to the workshop date. Below is an overview of the program structure:</p>
+					<div style="background-color: #f5f5f5; padding: 2em; border-radius: 8px; margin-bottom: 2em;">
+						<h3 style="margin-top: 0;">Daily Structure</h3>
+						<div style="display: grid; grid-template-columns: 1fr; gap: 1em;">
+							<div style="padding: 1em; background-color: white; border-left: 4px solid #2196F3; border-radius: 4px;">
+								<strong>Morning Sessions (9:00 AM – 1:00 PM)</strong>
+								<p style="margin: 0.5em 0 0 0; color: #666;">Expert lectures and keynote presentations</p>
+							</div>
+							<div style="padding: 1em; background-color: white; border-left: 4px solid #4CAF50; border-radius: 4px;">
+								<strong>Lunch Break (1:00 PM – 2:30 PM)</strong>
+								<p style="margin: 0.5em 0 0 0; color: #666;">Lunch in the common area</p>
+							</div>
+							<div style="padding: 1em; background-color: white; border-left: 4px solid #2196F3; border-radius: 4px;">
+								<strong>Afternoon Sessions (2:30 PM – 7:00 PM)</strong>
+								<p style="margin: 0.5em 0 0 0; color: #666;">Hands-on hackathons, group projects</p>
+							</div>
+							<div style="padding: 1em; background-color: white; border-left: 4px solid #4CAF50; border-radius: 4px;">
+								<strong>Dinner (7:00 PM – 8:30 PM)</strong>
+							</div>
+							<div style="padding: 1em; background-color: white; border-left: 4px solid #FF9800; border-radius: 4px;">
+								<strong>Evening Activities (after 8:30 PM)</strong>
+								<p style="margin: 0.5em 0 0 0; color: #666;">Social events, board games, and networking</p>
+							</div>
+						</div>
+						<p style="text-align: center; margin-top: 2em; font-style: italic; color: #666;">
+							Full schedule with session titles, speakers, and timings will be released in May 2026.
+						</p>
+					</div>
+				</div>
+			</section>
+			</div>
+
+			<!-- Footer / Contact -->
 			<div id="footer">
 				<div class="container">
 					<div class="row">
@@ -351,34 +656,24 @@
 									<p style="margin-bottom: 0.5em; font-weight: 600; color: #555;">Contact us at:</p>
 									<h4 style="margin: 0;">
 										<a href="mailto:canadian.ne.workshop@gmail.com"
-										   style="color: #2196F3; text-decoration: none; transition: color 0.3s;"
+										   style="color: #2196F3; text-decoration: none;"
 										   onmouseover="this.style.color='#1976D2'"
 										   onmouseout="this.style.color='#2196F3'">
-											✉️ canadian.ne.workshop@gmail.com
+											canadian.ne.workshop@gmail.com
 										</a>
 									</h4>
 								</div>
-								<p style="margin-top: 1.5em; font-size: 0.95em; color: #666;">
-									We typically respond within 24-48 hours.
-								</p>
+								<p style="margin-top: 1.5em; font-size: 0.95em; color: #666;">We typically respond within 24–48 hours.</p>
 							</section>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<section style="
-			  max-width: 500px;
-			  margin: 4rem auto;
-			  text-align: center;
-			  background: white;
-			  padding: 2rem;
-			  border-radius: 1rem;
-			  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-			">
-			  <header>
-				<h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">🌍 Visitors from around the world</h3>
-			  </header>
+			<section style="max-width:500px;margin:4rem auto;text-align:center;background:white;padding:2rem;border-radius:1rem;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+				<header>
+					<h3 style="font-size:1.8rem;margin-bottom:0.5rem;">Visitors from around the world</h3>
+				</header>
 				<a href="https://info.flagcounter.com/5ieT">
 					<img src="https://s01.flagcounter.com/count2/5ieT/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0">
 				</a>
@@ -386,52 +681,36 @@
 
 		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-			<!-- Currency Converter Script -->
-			<script>
-				async function convertCurrency() {
-					const baseCurrency = 'CAD';
-					const baseAmount = parseInt(document.getElementById('fee-type').value);
-					const targetCurrency = document.getElementById('currency').value;
-					const resultElement = document.getElementById('conversion-result');
-
-					resultElement.textContent = 'Converting...';
-
-					try {
-						const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${baseCurrency}`);
-						const data = await response.json();
-
-						if (data.rates[targetCurrency]) {
-							const convertedAmount = (baseAmount * data.rates[targetCurrency]).toFixed(2);
-							const symbol = getCurrencySymbol(targetCurrency);
-							resultElement.textContent = `≈ ${symbol}${convertedAmount} ${targetCurrency}`;
-						} else {
-							resultElement.textContent = 'Currency not available';
-						}
-					} catch (error) {
-						resultElement.textContent = 'Error converting currency. Please try again.';
-						console.error('Currency conversion error:', error);
+		<script>
+			async function convertCurrency() {
+				const baseCurrency = 'CAD';
+				const baseAmount = parseInt(document.getElementById('fee-type').value);
+				const targetCurrency = document.getElementById('currency').value;
+				const resultElement = document.getElementById('conversion-result');
+				resultElement.textContent = 'Converting...';
+				try {
+					const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${baseCurrency}`);
+					const data = await response.json();
+					if (data.rates[targetCurrency]) {
+						const convertedAmount = (baseAmount * data.rates[targetCurrency]).toFixed(2);
+						const symbols = {'USD':'$','EUR':'€','GBP':'£','JPY':'¥','AUD':'A$','CHF':'Fr','CNY':'¥','INR':'₹','BRL':'R$','CZK':'Kč'};
+						resultElement.textContent = `≈ ${symbols[targetCurrency]||''}${convertedAmount} ${targetCurrency}`;
+					} else {
+						resultElement.textContent = 'Currency not available';
 					}
+				} catch (error) {
+					resultElement.textContent = 'Error converting currency. Please try again.';
 				}
-
-				function getCurrencySymbol(currency) {
-					const symbols = {
-						'USD': '$', 'EUR': '€', 'GBP': '£', 'JPY': '¥',
-						'AUD': 'A$', 'CHF': 'Fr', 'CNY': '¥', 'INR': '₹',
-						'BRL': 'R$', 'CZK': 'Kč'
-					};
-					return symbols[currency] || '';
-				}
-			</script>
+			}
+		</script>
 
 	</body>
 </html>
