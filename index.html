@@ -6,6 +6,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+<!--		<style>-->
+<!--			#header {-->
+<!--				padding-top: 5px;-->
+<!--			}-->
+<!--		</style>-->
+
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -13,17 +20,16 @@
 			<!-- Top Navigation Bar -->
 			<div id="topnav" style="position:sticky;top:0;z-index:9999;background:rgba(15,17,26,0.98);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(0,0,0,0.4);width:100%;">
 				<style>
+
 					.topnav-inner {
 						max-width: 1300px;
 						margin: 0 auto;
 						display: flex;
-						justify-content: center;
+						justify-content: space-evenly;
 						align-items: stretch;
-						overflow-x: auto;
-						scrollbar-width: none;
-						white-space: nowrap;
+						flex-wrap: wrap;
+						white-space: normal;
 					}
-					.topnav-inner::-webkit-scrollbar { display: none; }
 					.topnav-inner a.nav-link {
 						color: #aab0c0;
 						text-decoration: none;
@@ -149,6 +155,9 @@
 					.leader-body { padding: 1.4em; display: flex; flex-direction: column; flex: 1; }
 					.leader-talks h4 { margin: 0.8em 0 0.25em; font-size: 0.92em; color: #222; }
 					.leader-talks p  { font-size: 0.86em; color: #555; line-height: 1.6; margin: 0 0 0.4em; }
+
+
+
 				</style>
 				<div class="topnav-inner">
 					<a href="#about"         class="nav-link">About</a>
@@ -159,6 +168,7 @@
 					<a href="#leaders"       class="nav-link">Discussion Leaders &amp; Topics</a>
 					<a href="#schedule"      class="nav-link">Schedule</a>
 					<a href="#getting-here" class="nav-link">Getting Here</a>
+					<a href="#conduct" class="nav-link">Code of Conduct</a>
 					<a href="#contact"       class="nav-cta">Contact</a>
 				</div>
 			</div>
@@ -207,7 +217,7 @@
 
 			<!-- About -->
 			<div class="wrapper style1">
-			<section id="about" class="container special" style="scroll-margin-top: 60px;">
+			<section id="about" class="container special" style="scroll-margin-top: 140px;">
 				<header>
 				<h2>Welcome to the <strong>Canadian Neuromorphic Engineering Workshop</strong></h2>
 				<p style="font-style: italic; font-size: 1.1em;">"The brain is imagination, and that was exciting to me; I wanted to build a chip that could imagine something" — Misha Mahowald</p>
@@ -224,7 +234,7 @@
 
 			<!-- Dates & Venue -->
 			<div class="wrapper style2">
-			<section id="dates" class="container special" style="scroll-margin-top: 60px;">
+			<section id="dates" class="container special" style="scroll-margin-top: 140px;">
 				<header><h2>Dates &amp; Venue</h2></header>
 				<div style="max-width: 900px; margin: 0 auto; text-align: center;">
 					<h3 style="margin-top: 1em;">June 15–26, 2026</h3>
@@ -235,7 +245,7 @@
 
 			<!-- Registration -->
 			<div class="wrapper style1" style="padding-top: 2em;">
-			<section id="registration" class="container special" style="scroll-margin-top: 60px;">
+			<section id="registration" class="container special" style="scroll-margin-top: 140px;">
 				<header><h2>Registration Fees (including HST)</h2></header>
 				<div style="max-width: 900px; margin: 0 auto; text-align: center;">
 					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin: 2em auto; max-width: 700px;">
@@ -283,7 +293,7 @@
 
 			<!-- Application -->
 			<div class="wrapper style2">
-			<section id="application" class="container special" style="scroll-margin-top: 60px;">
+			<section id="application" class="container special" style="scroll-margin-top: 140px;">
 				<header><h2>Application</h2></header>
 				<div style="max-width: 900px; margin: 0 auto; text-align: center;">
 					<div style="margin: 1.5em auto; padding: 1em; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; max-width: 600px;">
@@ -311,7 +321,7 @@
 
 			<!-- Accommodation -->
 			<div class="wrapper style1">
-			<section id="accommodation" class="container special" style="scroll-margin-top: 60px;">
+			<section id="accommodation" class="container special" style="scroll-margin-top: 140px;">
 				<header><h2>Accommodation</h2></header>
 				<div style="max-width: 900px; margin: 0 auto; text-align: left;">
 					<p style="margin-bottom: 2em;">We have arranged convenient on-campus housing options at the University of Waterloo for workshop participants. Two accommodation styles are available to suit different preferences and budgets. While we recommend these options for their proximity and convenience, you're welcome to explore alternative accommodations in the Waterloo area.</p>
@@ -363,7 +373,7 @@
 
 			<!-- Discussion Leaders -->
 			<div class="wrapper style2">
-			<section id="leaders" class="container special" style="scroll-margin-top: 60px;">
+			<section id="leaders" class="container special" style="scroll-margin-top: 140px;">
 				<header>
 					<h2>Discussion Leaders &amp; Topics</h2>
 					<p style="font-style: italic; color: #666; max-width: 700px; margin: 0 auto;">
@@ -709,7 +719,7 @@
 
 			<!-- Schedule -->
 <!--			<div class="wrapper style1">-->
-<!--			<section id="schedule" class="container special" style="scroll-margin-top: 60px;">-->
+<!--			<section id="schedule" class="container special" style="scroll-margin-top: 140px;">-->
 <!--				<header><h2>Program Schedule</h2></header>-->
 <!--				<div style="max-width: 900px; margin: 0 auto; text-align: left;">-->
 <!--					<p style="text-align: center; margin-bottom: 2em;">A detailed daily schedule will be announced closer to the workshop date. Below is an overview of the program structure:</p>-->
@@ -745,7 +755,7 @@
 <!--			</div>-->
 			<!-- Calendar -->
 			<div class="wrapper style1">
-			<section id="schedule" class="container special" style="scroll-margin-top: 60px;">
+			<section id="schedule" class="container special" style="scroll-margin-top: 140px;">
 				<header><h2>Calendar</h2></header>
 				<div style="max-width: 900px; margin: 0 auto; text-align: center;">
 					<iframe src="https://calendar.google.com/calendar/embed?src=canadian.ne.workshop%40gmail.com&ctz=America%2FToronto"
@@ -760,7 +770,7 @@
 
 			<!-- Getting Here -->
 			<div class="wrapper style2">
-			<section id="getting-here" class="container special" style="scroll-margin-top: 60px;">
+			<section id="getting-here" class="container special" style="scroll-margin-top: 140px;">
 				<header><h2>Getting Here</h2></header>
 				<div style="max-width: 900px; margin: 0 auto; text-align: left;">
 					<p style="margin-bottom: 2em;">
@@ -853,6 +863,38 @@
 					<p style="text-align:center; font-size:0.95em; color:#666; font-style:italic;">
 						Questions about getting here? Email us at <a href="mailto:canadian.ne.workshop@gmail.com" style="color:#2196F3;">canadian.ne.workshop@gmail.com</a>
 					</p>
+				</div>
+			</section>
+			</div>
+
+
+			<!-- Code of Conduct -->
+			<div class="wrapper style1">
+			<section id="conduct" class="container special" style="scroll-margin-top: 140px;">
+				<header>
+					<h2>Code of Conduct</h2>
+					<p style="font-style: italic; color: #666; max-width: 700px; margin: 0 auto;">
+						Building a workshop where everyone feels safe, respected, and free to do their best work.
+					</p>
+				</header>
+
+				<div style="max-width: 800px; margin: 0 auto; text-align: left;">
+
+
+					<!-- Anonymous reporting box -->
+					<div style="margin-top: 2.5em; padding: 2em; background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%); border-left: 4px solid #2196F3; border-radius: 0 8px 8px 0; text-align: center;">
+						<h3 style="margin-top: 0;">Prefer not to share your name?</h3>
+						<p style="margin-bottom: 1.5em;">
+							We know that reaching out can feel difficult, especially if you'd rather not identify yourself. You can submit a report anonymously using the form below, we'll still read and act on it, even without knowing who sent it.
+						</p>
+						<a href="https://docs.google.com/forms/d/e/1FAIpQLSeIi20ytrCM7jVuzImKQCg2NTtp157HGW9HkjhLBoLB9J-q_g/viewform?usp=dialog"
+						   target="_blank"
+						   style="display: inline-block; padding: 0.9em 2em; background-color: #2196F3; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.05em;">
+							Submit an Anonymous Report →
+						</a>
+					</div>
+
+
 				</div>
 			</section>
 			</div>
